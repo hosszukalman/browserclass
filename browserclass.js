@@ -12,7 +12,7 @@ var BrowserClass = {
   },
 
   checkBrowser: function() {
-    var matches = Array();
+    var matches = [];
     var aresult = '';
     var aversion = '';
     var resultant = '';
