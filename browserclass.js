@@ -1,3 +1,14 @@
+/**
+ * Browser class Plugin
+ *
+ * Public repository: https://github.com/hosszukalman/browserclass
+ * Examples and documentation at:
+ * Author: Kálmán Hosszu
+ * - twitter: kalmanhosszu
+ * - github: https://github.com/hosszukalman
+ * - drupal.org: https://drupal.org/user/267481
+ */
+
 var BrowserClass = {
   init: function() {
     this.classes = [];
