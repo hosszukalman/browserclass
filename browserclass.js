@@ -197,14 +197,14 @@ var BrowserClass = {
     var mobile_devices = ['ipad', 'ipod', 'iphone', 'android', 'blackberry', 'operamini'];
     var mobile_devices_test = false;
 
-    $.each(mobile_devices, function(index, value) {
-      if ($.inArray(value, classes) != -1) {
+    for (var i = 0; i < mobile_devices.length; i++) {
+      if (classes.indexOf(mobile_devices[i]) != -1) {
         mobile_devices_test = true;
 
         // Terminate the $.each() loop, since a match has been found.
         return false;
       }
-    });
+    }
 
     if (mobile_devices_test || this.agent.match(/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/)) {
       return true;
