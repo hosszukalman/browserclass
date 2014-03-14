@@ -43,12 +43,12 @@ var BrowserClass = {
     if (this.agent.match(/chrome/)) {
       this.classes.push('chrome');
 
-      aresult = this.stristr(this.agent, 'chrome').split('/');
+      aresult = this.getStingAfter(this.agent, 'chrome').split('/');
       aversion = aresult[1].split(' ');
       this.classes.push('chrome' + this.clearVersion(aversion[0]));
     } else if (this.agent.match(/crios/)) {
       this.classes.push('chrome');
-      aresult = this.stristr(this.agent, 'crios').split('/');
+      aresult = this.getStingAfter(this.agent, 'crios').split('/');
 
       if (aresult[1]) {
         aversion = aresult[1].split(' ');
@@ -217,34 +217,18 @@ var BrowserClass = {
     return version.substr(0, find);
   },
 
-  stristr: function(haystack, needle, bool) {
-    // Finds first occurrence of a string within another, case insensitive
-    //
-    // version: 1103.1210
-    // discuss at: http://phpjs.org/functions/stristr
-    // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-    // +   bugfxied by: Onno Marsman
-    // *     example 1: stristr('Kevin van Zonneveld', 'Van');
-    // *     returns 1: 'van Zonneveld'
-    // *     example 2: stristr('Kevin van Zonneveld', 'VAN', true);
-    // *     returns 2: 'Kevin '
-    var pos = 0;
-
-    haystack += '';
-    pos = haystack.toLowerCase().indexOf((needle + '').toLowerCase());
-    if (pos == -1) {
-        return false;
-    } else {
-        if (bool) {
-            return haystack.substr(0, pos);
-        } else {
-            return haystack.slice(pos);
-        }
+  getStingAfter: function(string, find) {
+    if (matches = string.match('(' + find + '.*)')) {
+      return matches[1];
     }
+
+    return null;
   }
 
 };
 
-BrowserClass.init();
-var element = document.getElementsByTagName("HTML")[0];
-element.className += " " + BrowserClass.classes.join(' ');
+window.onload = function () {
+  BrowserClass.init();
+  var element = document.getElementsByTagName("HTML")[0];
+  element.className += " " + BrowserClass.classes.join(' ');
+}
