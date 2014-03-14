@@ -201,7 +201,7 @@ var BrowserClass = {
       if (classes.indexOf(mobile_devices[i]) != -1) {
         mobile_devices_test = true;
 
-        // Terminate the $.each() loop, since a match has been found.
+        // Terminate the for loop, since a match has been found.
         return false;
       }
     }
