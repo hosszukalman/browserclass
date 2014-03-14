@@ -246,4 +246,5 @@ var BrowserClass = {
 };
 
 BrowserClass.init();
-$('body').addClass(BrowserClass.classes.join(' '));
+var element = document.getElementsByTagName("HTML")[0];
+element.className += " " + BrowserClass.classes.join(' ');
