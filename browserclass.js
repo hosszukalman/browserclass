@@ -56,7 +56,7 @@ var BrowserClass = {
       }
     } else if (this.agent.match(/safari/)) {
       this.classes.push('safari');
-      aresult = this.stristr(this.agent, 'version').split('/');
+      aresult = this.getStingAfter(this.agent, 'version').split('/');
 
       if(aresult[1]) {
         aversion = aresult[1].split(' ');
@@ -90,7 +90,7 @@ var BrowserClass = {
     if (this.agent.match(/konqueror/)) {
       this.classes.push('konqueror');
 
-      aresult = this.stristr(this.agent, 'konqueror').split(' ');
+      aresult = this.getStingAfter(this.agent, 'konqueror').split(' ');
       aversion = aresult[0].split('/');
       this.classes.push('konqueror' + this.clearVersion(aversion[1]));
     }
@@ -130,14 +130,14 @@ var BrowserClass = {
     if (this.agent.match(/opera mini/)) {
       this.classes.push('operamini');
 
-      resultant = this.stristr(this.agent, 'opera mini');
+      resultant = this.getStingAfter(this.agent, 'opera mini');
       if(resultant.match('/\//')) {
         aresult = resultant.split('/');
         aversion = aresult[1].split(' ');
         this.classes.push('operamini' + this.clearVersion(aversion[0]));
       }
       else {
-        aversion = this.stristr(resultant, 'opera mini').split(' ');
+        aversion = this.getStingAfter(resultant, 'opera mini').split(' ');
         this.classes.push('operamini' + this.clearVersion(aversion[1]));
       }
     }
