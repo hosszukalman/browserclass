@@ -1,5 +1,5 @@
 /**
- * Browser class Plugin
+ * Browser class Plugin v1.0
  *
  * Public repository: https://github.com/hosszukalman/browserclass
  * Examples and documentation at:
