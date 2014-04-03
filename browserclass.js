@@ -240,6 +240,6 @@ var BrowserClass = {
 
 window.onload = function () {
   BrowserClass.init();
-  var element = document.getElementsByTagName("HTML")[0];
+  var element = document.getElementsByTagName("BODY")[0];
   element.className += " " + BrowserClass.classes.join(' ');
 }
