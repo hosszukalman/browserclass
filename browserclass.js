@@ -213,13 +213,15 @@ var BrowserClass = {
         mobile_devices_test = true;
 
         // Terminate the for loop, since a match has been found.
-        return false;
+        break;
       }
     }
 
     if (mobile_devices_test || this.agent.match(/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/)) {
       return true;
     }
+    
+    return false;
   },
 
   clearVersion: function(version) {
