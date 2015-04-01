@@ -1,0 +1,27 @@
+{
+  "name": "browserclass",
+  "main": "browserclass.js",
+  "version": "1.0.0",
+  "homepage": "http://browserclass.org/",
+  "authors": [
+    "Kálmán Hosszu"
+  ],
+  "description": "Uses the user agent data to identify the current browser and platform",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "browserclass",
+    "user-agent",
+    "css-hacks",
+    "browser-detection"
+  ],
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
